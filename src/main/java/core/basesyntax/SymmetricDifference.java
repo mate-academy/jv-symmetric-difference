@@ -30,6 +30,6 @@ public class SymmetricDifference<T> {
         }
         result.addAll(secondSet);
 
-       return result;
+        return result;
     }
 }
