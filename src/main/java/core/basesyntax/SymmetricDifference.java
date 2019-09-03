@@ -1,5 +1,6 @@
 package core.basesyntax;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -9,7 +10,13 @@ import java.util.Set;
  * <p>Пример: симметрическая разность множеств {1, 2, 3} и {0, 1, 2} равна {0, 3}.</p>
  */
 public class SymmetricDifference<T> {
+
     public Set<T> symmetricDifference(Set<? extends T> set1, Set<? extends T> set2) {
-        return null;
+        Set<T> copySet1 = new HashSet<>(set1);
+        Set<T> copySet2 = new HashSet<>(set2);
+        copySet1.removeAll(set2);
+        copySet2.removeAll(set1);
+        copySet1.addAll(copySet2);
+        return copySet1;
     }
 }
