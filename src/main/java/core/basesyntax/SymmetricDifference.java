@@ -13,12 +13,16 @@ public class SymmetricDifference<T> {
     public Set<T> symmetricDifference(Set<? extends T> set1, Set<? extends T> set2) {
         Set<T> result = new TreeSet<>();
         for (T element1 : set1) {
-            if (!set2.contains(element1)) {
+            if (set2.contains(element1)) {
+                continue;
+            } else {
                 result.add(element1);
             }
         }
         for (T element2 : set2) {
-            if (!set1.contains(element2)) {
+            if (set1.contains(element2)) {
+                continue;
+            } else {
                 result.add(element2);
             }
         }
