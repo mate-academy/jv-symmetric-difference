@@ -16,7 +16,7 @@ public class SymmetricDifference<T> {
         symmetricDifference.addAll(set2);
         for (T toCopmare : set1) {
             for (T toCompareWith : set2) {
-                if(toCopmare.equals(toCompareWith)) {
+                if (toCopmare.equals(toCompareWith)) {
                     symmetricDifference.remove(toCompareWith);
                 }
             }
