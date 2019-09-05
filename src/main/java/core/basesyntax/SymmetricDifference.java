@@ -11,15 +11,11 @@ import java.util.TreeSet;
  */
 public class SymmetricDifference<T> {
     public Set<T> symmetricDifference(Set<? extends T> set1, Set<? extends T> set2) {
-        Set<T> resultSet = new TreeSet<>();
-        resultSet.addAll(set1);
-        for (T element : set2) {
-            if (resultSet.contains(element)) {
-                resultSet.remove(element);
-            } else {
-                resultSet.add(element);
-            }
-        }
-        return resultSet;
+        Set<T> numberSetOne = new TreeSet<T>(set1);
+        numberSetOne.removeAll(set2);
+        Set<T> numberSetTwo = new TreeSet<T>(set2);
+        numberSetTwo.removeAll(set1);
+        numberSetOne.addAll(numberSetTwo);
+        return numberSetOne;
     }
 }
