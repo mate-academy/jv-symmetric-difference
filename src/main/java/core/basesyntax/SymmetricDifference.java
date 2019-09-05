@@ -13,12 +13,10 @@ public class SymmetricDifference<T> {
     public Set<T> symmetricDifference(Set<? extends T> set1, Set<? extends T> set2) {
         Set<T> diffSet1 = new HashSet<>(set1);
         Set<T> diffSet2 = new HashSet<>(set2);
-        Set<T> result = new HashSet<>();
         diffSet1.removeAll(set2);
         diffSet2.removeAll(set1);
-        result.addAll(diffSet1);
-        result.addAll(diffSet2);
-        return result;
+        diffSet1.addAll(diffSet2);
+        return diffSet1;
 
     }
 }
