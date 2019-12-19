@@ -1,6 +1,6 @@
 package core.basesyntax;
 
-import java.util.LinkedHashSet;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -11,17 +11,11 @@ import java.util.Set;
  */
 public class SymmetricDifference<T> {
     public Set<T> symmetricDifference(Set<? extends T> set1, Set<? extends T> set2) {
-        Set<T> result = new LinkedHashSet<>();
-        addUnique(set1, set2, result);
-        addUnique(set2, set1, result);
+        Set<T> result = new HashSet<>(set1);
+        Set<T> temp = new HashSet<>(set2);
+        result.addAll(set2);
+        temp.retainAll(set1);
+        result.removeAll(temp);
         return result;
-    }
-
-    private void addUnique(Set<? extends T> getFrom, Set<? extends T> exceptFrom, Set<T> set3) {
-        for (T item: getFrom) {
-            if (!exceptFrom.contains(item)) {
-                set3.add(item);
-            }
-        }
     }
 }
