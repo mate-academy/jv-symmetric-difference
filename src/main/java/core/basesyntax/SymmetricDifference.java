@@ -14,13 +14,13 @@ public class SymmetricDifference<T> {
         Set<T> result = new HashSet<>();
         result.addAll(set1);
         result.addAll(set2);
-        Set<T> toRemove = new HashSet<>();
+        Set<T> setToRemove = new HashSet<>();
         for (T element : result) {
             if (set1.contains(element) && set2.contains(element)) {
-                toRemove.add(element);
+                setToRemove.add(element);
             }
         }
-        result.removeAll(toRemove);
+        result.removeAll(setToRemove);
         return result;
     }
 }
