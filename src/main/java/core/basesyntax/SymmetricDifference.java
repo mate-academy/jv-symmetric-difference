@@ -12,7 +12,7 @@ import java.util.TreeSet;
 public class SymmetricDifference<T> {
     public Set<T> symmetricDifference(Set<? extends T> set1, Set<? extends T> set2) {
         Set<T> result = new TreeSet<>(set2);
-        TreeSet<T> temp = new TreeSet<>(set1);
+        Set<T> temp = new TreeSet<>(set1);
         temp.removeAll(set2);
         result.removeAll(set1);
         result.addAll(temp);
