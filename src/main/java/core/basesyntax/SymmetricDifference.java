@@ -1,6 +1,7 @@
 package core.basesyntax;
 
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * <p>Реализуйте метод, вычисляющий симметрическую разность двух множеств. Метод должен возвращать
@@ -10,6 +11,13 @@ import java.util.Set;
  */
 public class SymmetricDifference<T> {
     public Set<T> symmetricDifference(Set<? extends T> set1, Set<? extends T> set2) {
-        return null;
+        Set<T> differenceOfData = new TreeSet<>();
+        Set<T> firstDifference = new TreeSet<>(set1);
+        Set<T> secondDifference = new TreeSet<>(set2);
+        firstDifference.removeAll(set2);
+        secondDifference.removeAll(set1);
+        differenceOfData.addAll(firstDifference);
+        differenceOfData.addAll(secondDifference);
+        return differenceOfData;
     }
 }
