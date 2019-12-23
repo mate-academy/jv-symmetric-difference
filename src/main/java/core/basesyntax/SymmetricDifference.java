@@ -17,9 +17,7 @@ public class SymmetricDifference<T> {
         interimFirst.removeAll(set2);
         interimSecond.addAll(set2);
         interimSecond.removeAll(set1);
-        Set<T> symmetricDifference = new HashSet<>();
-        symmetricDifference.addAll(interimFirst);
-        symmetricDifference.addAll(interimSecond);
-        return symmetricDifference;
+        interimFirst.addAll(interimSecond);
+        return interimFirst;
     }
 }
