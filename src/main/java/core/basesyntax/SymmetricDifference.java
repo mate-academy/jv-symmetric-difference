@@ -1,8 +1,7 @@
 package core.basesyntax;
 
 import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.TreeSet;
 
 /**
  * <p>Реализуйте метод, вычисляющий симметрическую разность двух множеств. Метод должен возвращать
@@ -12,8 +11,11 @@ import java.util.stream.Stream;
  */
 public class SymmetricDifference<T> {
     public Set<T> symmetricDifference(Set<? extends T> set1, Set<? extends T> set2) {
-        return Stream.concat(set1.stream().filter(x -> !set2.contains(x)),
-                set2.stream().filter(x -> !set1.contains(x)))
-                .collect(Collectors.toSet());
+        Set<T> setOne = new TreeSet<>(set1);
+        Set<T> setTwo = new TreeSet<>(set2);
+        setOne.removeAll(set2);
+        setTwo.removeAll(set1);
+        setOne.addAll(setTwo);
+        return setOne;
     }
 }
