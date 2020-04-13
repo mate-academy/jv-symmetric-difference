@@ -11,8 +11,7 @@ import java.util.Set;
  */
 public class SymmetricDifference<T> {
     public Set<T> symmetricDifference(Set<T> set1, Set<T> set2) {
-        Set<T> set = new HashSet<>();
-        set.addAll(set1);
+        Set<T> set = new HashSet<>(set1);
         set.addAll(set2);
         set.removeIf(item -> set1.contains(item) && set2.contains(item));
         return set;
