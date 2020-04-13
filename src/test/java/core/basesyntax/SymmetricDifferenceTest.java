@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.HashSet;
 import java.util.Set;
 
-public class SymmetricDifferenceTest {
+public class    SymmetricDifferenceTest {
     private static final Set<Integer> FIRST_SET = new HashSet<>() {
         {
             add(1);
