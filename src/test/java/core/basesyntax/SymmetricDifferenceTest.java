@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class SymmetricDifferenceTest {
-    private static final Set<Integer> FIRST_SET = new HashSet<Integer>() {
+    private static final Set<Integer> FIRST_SET = new HashSet<>() {
         {
             add(1);
             add(2);
@@ -15,7 +15,7 @@ public class SymmetricDifferenceTest {
         }
     };
 
-    private static final Set<Integer> SECOND_SET = new HashSet<Integer>() {
+    private static final Set<Integer> SECOND_SET = new HashSet<>() {
         {
             add(2);
             add(3);
@@ -23,21 +23,21 @@ public class SymmetricDifferenceTest {
         }
     };
 
-    private static final Set<Integer> THIRD_SET = new HashSet<Integer>() {
+    private static final Set<Integer> THIRD_SET = new HashSet<>() {
         {
             add(4);
             add(5);
         }
     };
 
-    private static final Set<Integer> RESULT_WITH_SOME_ELEMENTS = new HashSet<Integer>() {
+    private static final Set<Integer> RESULT_WITH_SOME_ELEMENTS = new HashSet<>() {
         {
             add(1);
             add(4);
         }
     };
 
-    private static final Set<Integer> RESULT_WITH_ALL_ELEMENTS = new HashSet<Integer>() {
+    private static final Set<Integer> RESULT_WITH_ALL_ELEMENTS = new HashSet<>() {
         {
             add(1);
             add(2);
