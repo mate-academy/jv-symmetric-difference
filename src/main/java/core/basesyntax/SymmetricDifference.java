@@ -1,5 +1,6 @@
 package core.basesyntax;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -10,6 +11,13 @@ import java.util.Set;
  */
 public class SymmetricDifference<T> {
     public Set<T> symmetricDifference(Set<? extends T> set1, Set<? extends T> set2) {
-        return null;
+        Set<T> firstUniq = new HashSet<>(set1);
+        firstUniq.removeAll(set2);
+
+        Set<T> secondUniq = new HashSet<>(set2);
+        secondUniq.removeAll(set1);
+
+        firstUniq.addAll(secondUniq);
+        return firstUniq;
     }
 }
