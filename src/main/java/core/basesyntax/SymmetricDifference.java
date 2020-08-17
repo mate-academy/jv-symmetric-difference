@@ -12,16 +12,18 @@ import java.util.Set;
 public class SymmetricDifference<T> {
     public Set<T> symmetricDifference(Set<? extends T> set1, Set<? extends T> set2) {
         Set<T> set3 = new HashSet();
+        set3.addAll(unique(set1, set2));
+        set3.addAll(unique(set2, set1));
+        return set3;
+    }
+
+    public Set<T> unique(Set<? extends T> set1, Set<? extends T> set2) {
+        Set<T> setToReurn = new HashSet();
         for (T set1object : set1) {
             if (!set2.contains(set1object)) {
-                set3.add(set1object);
+                setToReurn.add(set1object);
             }
         }
-        for (T set2object : set2) {
-            if (!set1.contains(set2object)) {
-                set3.add(set2object);
-            }
-        }
-        return set3;
+        return setToReurn;
     }
 }
