@@ -16,6 +16,6 @@ public class SymmetricDifference<T> {
         resultSet.removeAll(set1);
         temporarySet.removeAll(set2);
         resultSet.addAll(temporarySet);
-        return (Set<T>) resultSet;
+        return resultSet;
     }
 }
