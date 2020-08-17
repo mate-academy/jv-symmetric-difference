@@ -15,9 +15,7 @@ public class SymmetricDifference<T> {
         Set<T> second = new HashSet<>(set2);
         first.removeAll(set2);
         second.removeAll(set1);
-        Set<T> result = new HashSet<>();
-        result.addAll(first);
-        result.addAll(second);
-        return result;
+        first.addAll(second);
+        return first;
     }
 }
